@@ -109,3 +109,9 @@ manpage rebuild-jar-repository
 manpage shade-jar
 
 (cd ./python && "${pyinterpreter}" setup.py build)
+
+(
+    set -eux
+    ${CXX} ${CXXFLAGS} -Wall -Wextra -Wpedantic -std=c++2a -fconcepts -I. ${LDFLAGS} -lstdc++fs -o bin/java_remove_symbols java-utils/java_remove_symbols.cpp
+    ${CXX} ${CXXFLAGS} -Wall -Wextra -Wpedantic -std=c++2a -fconcepts -I. ${LDFLAGS} -lstdc++fs -o bin/java_remove_symbols_test test/java_remove_symbols_test.cpp
+)

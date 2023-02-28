@@ -27,9 +27,8 @@ List of simple class names to be matched against the simple names of imported
 symbols. Names are matched for exact equality.
 
 *-p*::
-List of patterns to be matched against imported symbols. The script uses the
-*string.find* function from Lua to match each imported symbol against every
-pattern.
+List of regex patterns to be matched against imported symbols. Each imported
+symbol found in the code is matched against each pattern.
 
 EXAMPLES
 --------
